@@ -42,7 +42,7 @@ namespace Api.Controllers
             _infectadosCollection.UpdateOne(Builders<Infectado>.Filter.Where(_ => _.DataNascimento == dto.DataNascimento), Builders<Infectado>.Update.Set("sexo", dto.Sexo));
             return Ok("Atualizado com sucesso!");
         }
-        [HttpDelete("{dataNasc}")]
+        [HttpDelete("{dataNas}")]
         public ActionResult Delete(System.DateTime dataNas)
         {
             _infectadosCollection.DeleteOne(Builders<Infectado>.Filter.Where(_ => _.DataNascimento == dataNas));
